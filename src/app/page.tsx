@@ -6,6 +6,7 @@ import MapboxComponent from '@/components/MapboxComponent';
 import HeroMap from '@/components/HeroMap';
 import SummaryHome from '@/components/SummaryHome';
 import WhatWeWatch from '@/components/WhatWeWatch';
+import WhyWeAreWatching from '@/components/WhyWeAreWatching';
 export default function Home() {
     return (
         <Box
@@ -25,6 +26,7 @@ export default function Home() {
             <SummaryHome />
             <OurWork />
             <WhatWeWatch />
+            <WhyWeAreWatching />
         </Box>
     );
 }
