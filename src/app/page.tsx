@@ -1,12 +1,11 @@
 import { Box } from '@mui/material';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
 import OurWork from '@/components/OurWork';
-import MapboxComponent from '@/components/MapboxComponent';
 import HeroMap from '@/components/HeroMap';
 import SummaryHome from '@/components/SummaryHome';
 import WhatWeWatch from '@/components/WhatWeWatch';
 import WhyWeAreWatching from '@/components/WhyWeAreWatching';
+import FeaturedProjects from '@/components/FeaturedProjects';
 export default function Home() {
     return (
         <Box
@@ -19,14 +18,12 @@ export default function Home() {
             }}
         >
             <Navbar />
-            {/* <Hero />
-            <OurWork />
-            <MapboxComponent /> */}
             <HeroMap />
             <SummaryHome />
             <OurWork />
             <WhatWeWatch />
             <WhyWeAreWatching />
+            <FeaturedProjects />
         </Box>
     );
 }
