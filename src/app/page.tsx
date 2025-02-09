@@ -21,11 +21,10 @@ export default function Home() {
             <Navbar />
             <HeroMap />
             <SummaryHome />
-            <MapPage />
-            <OurWork />
-            <WhatWeWatch />
             <WhyWeAreWatching />
+            <OurWork />
             <FeaturedProjects />
+            <WhatWeWatch />
         </Box>
     );
 }
