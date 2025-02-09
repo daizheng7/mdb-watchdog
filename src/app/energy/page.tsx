@@ -6,6 +6,7 @@ import MapPage from "@/components/MapPage";
 import { motion } from "framer-motion";
 import PolicyEnergy from "@/components/PolicyEnergy";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import SummarySector from "@/components/SummarySector";
 
 export default function EnergyPage() {
   return (
@@ -72,6 +73,24 @@ export default function EnergyPage() {
           }}
         >
           <FeaturedProjects />
+        </Box>
+      </motion.div>
+      {/* Energy Policy Timeline Section Below */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <Box
+          sx={{
+            padding: "60px 20px",
+            backgroundColor: "#E6EBD8",
+            borderRadius: "12px",
+            boxShadow: 3,
+            width: "100%",
+          }}
+        >
+          <SummarySector />
         </Box>
       </motion.div>
     </Box>

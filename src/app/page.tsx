@@ -7,6 +7,7 @@ import WhatWeWatch from '@/components/WhatWeWatch';
 import WhyWeAreWatching from '@/components/WhyWeAreWatching';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import MapPage from '@/components/MapPage';
+import SummarySector from '@/components/SummarySector';
 export default function Home() {
     return (
         <Box
@@ -25,6 +26,7 @@ export default function Home() {
             <OurWork />
             <FeaturedProjects />
             <WhatWeWatch />
+    
         </Box>
     );
 }
