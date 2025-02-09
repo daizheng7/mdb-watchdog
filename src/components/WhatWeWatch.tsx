@@ -1,96 +1,120 @@
-'use client';
+"use client";
 
-import { Box, Typography, Card, CardContent, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { FaGlobe, FaBuilding, FaHandshake } from 'react-icons/fa';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance'; // MDBs Icon
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney'; // Funding Icon
-import BusinessIcon from '@mui/icons-material/Business'; // CPEC Icon
+import { Box, Typography, Card, CardContent, Grid } from "@mui/material";
+import { motion } from "framer-motion";
+import { FaHandshake } from "react-icons/fa";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance"; // MDBs Icon
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney"; // Funding Icon
+import BusinessIcon from "@mui/icons-material/Business"; // CPEC Icon
 
-// Animation variants
+// Animation Variants
 const cardVariants = {
-    initial: { scale: 1, opacity: 0.8 },
-    hover: { scale: 1.05, opacity: 1, transition: { duration: 0.3 } },
+  initial: { scale: 1, opacity: 0.9 },
+  hover: { scale: 1.08, opacity: 1, transition: { duration: 0.3 } },
 };
 
-// Organizations being monitored
+// Organizations Being Monitored
 const watchList = [
-    {
-        id: 1,
-        name: 'World Bank (WB)',
-        description: 'Tracking WB-funded projects for transparency and effectiveness.',
-        icon: <AccountBalanceIcon sx={{ fontSize: 50, color: '#8FBC8F' }} />, // Using primary green
-    },
-    {
-        id: 2,
-        name: 'Asian Development Bank (ADB)',
-        description: 'Monitoring ADB investments and their social impact.',
-        icon: <AttachMoneyIcon sx={{ fontSize: 50, color: '#FCE883' }} />, // Using warning yellow
-    },
-    {
-        id: 3,
-        name: 'China-Pakistan Economic Corridor (CPEC)',
-        description: 'Analyzing CPEC’s economic and environmental effects.',
-        icon: <BusinessIcon sx={{ fontSize: 50, color: '#564F7D' }} />, // Using secondary purple
-    },
-    {
-        id: 4,
-        name: 'Other Development Banks & Bilateral Donors',
-        description: 'Ensuring accountability in financing from institutions like AIIB, IMF, and UN agencies.',
-        icon: <FaHandshake size={50} color="#8B0000" />, // Using error dark red
-    },
+  {
+    id: 1,
+    name: "World Bank",
+    icon: <AccountBalanceIcon sx={{ fontSize: 70, color: "#8FBC8F" }} />, // Green
+  },
+  {
+    id: 2,
+    name: "Asian Development Bank",
+    icon: <AttachMoneyIcon sx={{ fontSize: 70, color: "#FCE883" }} />, // Yellow
+  },
+  {
+    id: 3,
+    name: "China-Pakistan Economic Corridor",
+    icon: <BusinessIcon sx={{ fontSize: 70, color: "#564F7D" }} />, // Purple
+  },
+  {
+    id: 4,
+    name: "Other Development Banks",
+    icon: <FaHandshake size={70} color="#8B0000" />, // Dark Red
+  },
 ];
 
 export default function WhatWeWatch() {
-    return (
-        <Box
-            sx={{
-                textAlign: 'center',
-                backgroundColor: 'background.default',
-                padding: '80px 0',
-            }}
-        >
-            <Typography variant="h2" sx={{ color: 'primary.main', fontWeight: 'bold', marginBottom: 4 }}>
-                What Are We Watching?
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.primary', maxWidth: '800px', margin: '0 auto 40px' }}>
-                MDB Watchdog tracks major international funding and infrastructure projects to ensure transparency,
-                accountability, and impact assessment.
-            </Typography>
-
-            <Grid container spacing={4} justifyContent="center">
-                {watchList.map((item) => (
-                    <Grid item xs={12} sm={6} md={3} key={item.id}>
-                        <motion.div variants={cardVariants} initial="initial" whileHover="hover">
-                            <Card
-                                sx={{
-                                    height: 220,
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    padding: 3,
-                                    boxShadow: 5,
-                                    borderRadius: '15px',
-                                    backgroundColor: 'background.paper',
-                                    textAlign: 'center',
-                                }}
-                            >
-                                {item.icon}
-                                <CardContent>
-                                    <Typography variant="h6" fontWeight="bold" sx={{ color: 'text.primary' }}>
-                                        {item.name}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: 'text.secondary', marginTop: 1 }}>
-                                        {item.description}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    </Grid>
-                ))}
-            </Grid>
+  return (
+    <Box
+      sx={{
+        textAlign: "center",
+        backgroundColor: "background.default",
+        padding: { xs: "60px 20px", md: "100px 80px" },
+      }}
+    >
+      {/* Title Section */}
+      <Typography
+        variant="h2"
+        sx={{
+          color: "primary.main",
+          fontWeight: "bold",
+          marginBottom: 6,
+          maxWidth: "1000px",
+          marginX: "auto",
+          lineHeight: 1.3,
+          fontSize: { xs: "2.5rem", md: "3.5rem" }, // Ensuring it remains large
+          letterSpacing: "0.5px",
+        }}
+      >
+        MDB Watchdog monitors{" "}
+        <Box component="span" sx={{ fontWeight: "bold", color: "black" }}>
+          major international funding and infrastructure projects
+        </Box>{" "}
+        to ensure{" "}
+        <Box component="span" sx={{ fontWeight: "bold", color: "black" }}>
+          transparency, accountability, and real impact.
         </Box>
-    );
+      </Typography>
+
+      {/* Cards Section */}
+      <Grid container spacing={4} justifyContent="center">
+        {watchList.map((item) => (
+          <Grid item xs={12} sm={6} md={3} key={item.id}>
+            <motion.div variants={cardVariants} initial="initial" whileHover="hover">
+              <Card
+                sx={{
+                  height: 240,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 4,
+                  boxShadow: 6,
+                  borderRadius: "18px",
+                  backgroundColor: "background.paper",
+                  textAlign: "center",
+                  transition: "all 0.3s ease-in-out",
+                  "&:hover": {
+                    boxShadow: 12,
+                    transform: "translateY(-5px)", // Subtle lift effect
+                  },
+                }}
+              >
+                {item.icon}
+                <CardContent sx={{ paddingBottom: "0 !important" }}>
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    sx={{
+                      color: "text.primary",
+                      fontSize: "1.2rem",
+                      textTransform: "uppercase",
+                      marginTop: 2,
+                      letterSpacing: "0.8px",
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
 }

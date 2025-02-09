@@ -76,9 +76,15 @@ export default function MapPage() {
   // **Automatically Progress Year**
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentYear((prevYear) => (prevYear >= 2024 ? 2010 : prevYear + 1));
+      setCurrentYear((prevYear) => {
+        if (prevYear >= 2024) {
+          clearInterval(interval); // Stop at 2024
+          return prevYear;
+        }
+        return prevYear + 1;
+      });
     }, 2000); // Increase year every 2 seconds
-
+  
     return () => clearInterval(interval);
   }, []);
 

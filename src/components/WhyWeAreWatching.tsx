@@ -32,7 +32,7 @@ export default function WhyWeAreWatching() {
             }}
         >
             <Typography variant="h2" fontWeight="bold" sx={{ mb: 4 }}>
-                Why We Are Watching
+            Why a Development Watchdog?
             </Typography>
             <Grid container spacing={4} justifyContent="center">
                 {reasons.map((reason, index) => (
